@@ -1,0 +1,6 @@
+name: microservice
+dependencies:
+  - conda-forge::kwant=1.4.1
+  - conda-forge::pip=20.0.2
+  - pip:
+    - seldon_core==1.0.2

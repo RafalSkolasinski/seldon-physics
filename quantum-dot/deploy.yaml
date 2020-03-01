@@ -1,0 +1,25 @@
+apiVersion: machinelearning.seldon.io/v1alpha2
+kind: SeldonDeployment
+metadata:
+  labels:
+    app: seldon
+  name: seldon-quantum-dot
+spec:
+  name: quantum-dot
+  predictors:
+  - componentSpecs:
+    - spec:
+        containers:
+        - image: quantum-dot:latest
+          imagePullPolicy: IfNotPresent
+          name: quantum-dot
+    graph:
+      children: []
+      endpoint:
+        type: REST
+      name: quantum-dot
+      type: MODEL
+    labels:
+      version: v1
+    name: quantum-dot
+    replicas: 1
